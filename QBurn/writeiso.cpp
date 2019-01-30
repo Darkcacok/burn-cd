@@ -18,6 +18,11 @@ WriteISO::~WriteISO()
     delete ui;
 }
 
+void WriteISO::closeEvent(QCloseEvent *event)
+{
+    burn.~Burn();
+}
+
 void WriteISO::on_choose_clicked()
 {
     path_to_file = QFileDialog::getOpenFileName(this, tr("Выбрать ISO"), "/home", tr("ISO 9660 Files (*.iso)"));

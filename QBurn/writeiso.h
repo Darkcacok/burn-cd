@@ -19,10 +19,10 @@ class WriteISO : public QDialog
 public:
     explicit WriteISO(QWidget *parent = nullptr);
     ~WriteISO();
+    void closeEvent(QCloseEvent *event);
 
 private slots:
     void on_choose_clicked();
-
     void on_burn_clicked();
 
 private:
