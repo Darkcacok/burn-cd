@@ -5,6 +5,8 @@
 
 #include <QDialog>
 #include <QFileDialog>
+#include <QString>
+
 
 namespace Ui {
 class WriteISO;
@@ -20,6 +22,8 @@ public:
 
 private slots:
     void on_choose_clicked();
+
+    void on_burn_clicked();
 
 private:
     Ui::WriteISO *ui;
