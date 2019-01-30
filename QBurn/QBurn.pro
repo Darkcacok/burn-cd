@@ -26,15 +26,25 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    writeiso.cpp \
+    burn.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    writeiso.h \
+    burn.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    writeiso.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+unix:!macx: LIBS += -L$$PWD/../libburn/ -lburn
+
+INCLUDEPATH += $$PWD/../libburn
+DEPENDPATH += $$PWD/../libburn

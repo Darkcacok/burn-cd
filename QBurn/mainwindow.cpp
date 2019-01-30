@@ -12,3 +12,9 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_btn_write_iso_clicked()
+{
+    write_iso = new WriteISO(this);
+    write_iso->show();
+}
