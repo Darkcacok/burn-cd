@@ -16,5 +16,6 @@ MainWindow::~MainWindow()
 void MainWindow::on_btn_write_iso_clicked()
 {
     write_iso = new WriteISO(this);
-    write_iso->show();
+    write_iso->setModal(true);
+    write_iso->exec();
 }
